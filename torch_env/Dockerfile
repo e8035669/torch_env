@@ -34,7 +34,8 @@ RUN git clone https://github.com/ultralytics/yolov3 && \
 WORKDIR /root/
 RUN pacaur -Scc --noconfirm && \
     rm /etc/sudoers.d/packager && \
-    userdel -r packager
+    userdel -r packager && \
+    pacaur -Rdd --noconfirm nvidia-utils
 
 WORKDIR /root/
 CMD ["/bin/bash"]
