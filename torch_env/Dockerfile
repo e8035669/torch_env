@@ -29,7 +29,8 @@ WORKDIR /root/
 
 RUN git clone https://github.com/ultralytics/yolov3 && \
     cd yolov3 && \
-    pip --no-cache-dir install thop opencv-python tensorboard-data-server
+    pip --no-cache-dir install thop opencv-python tensorboard-data-server \
+    torchsummary sklearn
 
 WORKDIR /root/
 RUN pacaur -Scc --noconfirm && \
